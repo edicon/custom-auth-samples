@@ -9,7 +9,7 @@ const request = require('request-promise');
 const firebaseAdmin = require('firebase-admin');
 // you should manually put your service-account.json in the same folder app.js
 // is located at.
-const serviceAccount = require('./service-account.json');
+const serviceAccount = require('./firebase-mdic-firebase-adminsdk-2559g-ea50029d45.json');
 
 // Kakao API request url to retrieve user profile based on access token
 const requestMeUrl = 'https://kapi.kakao.com/v1/user/me';
@@ -17,6 +17,7 @@ const requestMeUrl = 'https://kapi.kakao.com/v1/user/me';
 // Initialize FirebaseApp with service-account.json
 firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(serviceAccount),
+  databaseURL: "https://mdic.firebaseio.com"
 });
 
 
